@@ -7,20 +7,20 @@
 // Example 1:
 
 // Input: grid = [
-//   ["1","1","1","1","0"],
-//   ["1","1","0","1","0"],
-//   ["1","1","0","0","0"],
-//   ["0","0","0","0","0"]
+//   ['1','1','1','1','0'],
+//   ['1','1','0','1','0'],
+//   ['1','1','0','0','0'],
+//   ['0','0','0','0','0']
 // ]
 // Output: 1
 
 // Example 2:
 
 // Input: grid = [
-//   ["1","1","0","0","0"],
-//   ["1","1","0","0","0"],
-//   ["0","0","1","0","0"],
-//   ["0","0","0","1","1"]
+//   ['1','1','0','0','0'],
+//   ['1','1','0','0','0'],
+//   ['0','0','1','0','0'],
+//   ['0','0','0','1','1']
 // ]
 // Output: 3
 
@@ -35,6 +35,21 @@
 
 class NoOfIslands{
 
+    public static void main(String[] args) {
+
+        char[][] grid = {
+              {'1','1','0','0','0'},
+              {'1','1','0','0','0'},
+              {'0','0','1','0','0'},
+              {'0','0','0','1','1'}
+        };
+        NoOfIslands n = new NoOfIslands();
+        int count = n.numIslands(grid); 
+        System.out.println(count);
+
+        
+    }
+
     public static void dfs(char[][] grid, int r, int c){
         if(r<0 || r >= grid.length || c<0 || c>=grid[0].length || grid[r][c] == '0')
          return;
@@ -47,7 +62,7 @@ class NoOfIslands{
         dfs(grid, r, c-1);
     }
 
-    public int numIslands(char[][] grid){
+    public  int numIslands(char[][] grid){
         int count = 0;
 
         for (int i = 0; i < grid.length; i++) {
